@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Company Profile</title>
+</head>
+
+<body>
+  <h1>Company Profile</h1>
+
+  <button onclick="toggleLanguage()">Toggle Language</button>
+
+  <h2 class="translate" data-english="Positions" data-spanish="Posiciones">Positions</h2>
+
+  <div class="position">
+    <h3 class="translate" data-english="Seamstress" data-spanish="Costurera">Seamstress</h3>
+    <img src="seamstress.jpg" alt="Seamstress Image">
+    <p class="translate" data-english="Brief description of the seamstress position." data-spanish="Breve descripción del puesto de costurera.">Brief description of the seamstress position.</p>
+  </div>
+
+  <div class="position">
+    <h3 class="translate" data-english="Teacher" data-spanish="Maestro">Teacher</h3>
+    <img src="teacher.jpg" alt="Teacher Image">
+    <p class="translate" data-english="Brief description of the teacher position." data-spanish="Breve descripción del puesto de maestro.">Brief description of the teacher position.</p>
+  </div>
+
+  <div class="position">
+    <h3 class="translate" data-english="IT Support" data-spanish="Soporte de TI">IT Support</h3>
+    <img src="it_support.jpg" alt="IT Support Image">
+    <p class="translate" data-english="Brief description of the IT support position." data-spanish="Breve descripción del puesto de soporte de TI.">Brief description of the IT support position.</p>
+  </div>
+
+  <div class="position">
+    <h3 class="translate" data-english="Spanish Translator" data-spanish="Traductor de Español">Spanish Translator</h3>
+    <img src="spanish_translator.jpg" alt="Spanish Translator Image">
+    <p class="translate" data-english="Brief description of the Spanish translator position." data-spanish="Breve descripción del puesto de traductor de español.">Brief description of the Spanish translator position.</p>
+  </div>
+
+  <div class="position">
+    <h3 class="translate" data-english="DACA Support" data-spanish="Apoyo de DACA">DACA Support</h3>
+    <img src="daca_support.jpg" alt="DACA Support Image">
+    <p class="translate" data-english="Brief description of the DACA support position." data-spanish="Breve descripción del puesto de apoyo de DACA.">Brief description of the DACA support position.</p>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    var isEnglish = true;
+
+    function toggleLanguage() {
+      isEnglish = !isEnglish;
+
+      $('.translate').each(function() {
+        var $this = $(this);
+        if (isEnglish) {
+          $this.text($this.data('english'));
+        } else {
+          $this.text($this.data('spanish'));
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>
